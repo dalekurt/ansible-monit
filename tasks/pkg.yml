@@ -3,4 +3,4 @@
   yum:
     name: monit
     update_cache: yes
-    state: install
+    state: latest
