@@ -1,9 +1,9 @@
-- hosts: host1
+- hosts: all
   sudo: yes
-  roles:
-    - { role: monit, monit_services: [ unbound ], monit_webinterface_enabled: false }
 
-- hosts: host2
-  sudo: yes
   roles:
-    - { role: monit, monit_services: [ sshd ], monit_webinterface_port: 8080 }
+    - dalekurt.monit
+  vars:
+    monit_cycle: 60
+    monit_webinterface_enabled: true
+    monit_webinterface_port: 2812
